@@ -1,0 +1,2 @@
+# Emotional_resilience_coach
+ This project is a web platform that helps users manage their emotions by providing personalized recommendations like memes, songs, and fun activities. Users fill out a survey about their emotions, and the system uses a machine learning model to understand their emotional state and suggest helpful content. The project has a React.js frontend for the user interface and a Flask backend that processes the survey data and provides recommendations. It's a simple and engaging tool to support emotional well-being.
