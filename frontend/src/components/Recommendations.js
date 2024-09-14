@@ -1,15 +1,35 @@
 import React from 'react';
-import './Recommendations.css';
 
-function Recommendations({ recommendation }) {
+const Recommendations = ({ recommendations }) => {
   return (
-    <section id="recommendations" className="recommendations">
-      <h2></h2>
-      <div className="recommendation-output">
-        {recommendation && <p>{recommendation}</p>}
+    <div>
+      <div>
+        
+        <ul>
+          {recommendations.tips.map((tip, index) => (
+            <li key={index}>{tip}</li>
+          ))}
+        </ul>
       </div>
-    </section>
+      <div>
+    
+        {recommendations.memes.map((meme, index) => (
+          <img key={index} src={meme} alt={`Meme ${index}`} style={{ width: '200px', margin: '10px' }} />
+        ))}
+      </div>
+      <div>
+        {recommendations.songs.map((song, index) => (
+          <div key={index}>
+            <audio controls>
+              <source src={song} type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+        ))}
+      </div>
+    </div>
   );
-}
+};
 
 export default Recommendations;
+

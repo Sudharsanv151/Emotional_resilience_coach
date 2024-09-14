@@ -7,32 +7,37 @@ import About from './components/About';
 import Footer from './components/Footer';
 
 function App() {
-  const [recommendation, setRecommendation] = useState('');
+  const [recommendations, setRecommendations] = useState({
+    tips: [],
+    memes: [],
+    songs: []
+  });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSurveySubmit = (mood, stressLevel) => {
-    let recommendationText = '';
+  const handleSurveySubmit = async (mood, stressLevel) => {
+    setLoading(true);
+    setError('');
+    try {
+      const response = await fetch('http://localhost:5000/get_recommendation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ mood, stressLevel }),
+      });
 
-    switch (mood) {
-      case 'happy':
-        recommendationText = "You're in a great mood! Keep engaging in activities that bring you joy.";
-        break;
-      case 'neutral':
-        recommendationText = "Take some time to relax and do something you enjoy to boost your mood.";
-        break;
-      case 'sad':
-        recommendationText = "It's okay to feel down. Try talking to someone or engaging in a calming activity.";
-        break;
-      case 'stressed':
-        recommendationText = "Consider practicing mindfulness or taking short breaks to manage your stress.";
-        break;
-      case 'anxious':
-        recommendationText = "Deep breathing exercises and mindfulness can help reduce anxiety.";
-        break;
-      default:
-        recommendationText = "Keep tracking your mood for more personalized insights.";
+      if (!response.ok) {
+        throw new Error('Failed to fetch recommendations');
+      }
+
+      const data = await response.json();
+      setRecommendations(data);
+    } catch (err) {
+      setError('Something went wrong, please try again later.');
+    } finally {
+      setLoading(false);
     }
-
-    setRecommendation(recommendationText);
   };
 
   return (
@@ -40,7 +45,9 @@ function App() {
       <Header />
       <Home />
       <Survey onSubmit={handleSurveySubmit} />
-      <Recommendations recommendation={recommendation} />
+      {loading && <p>Loading recommendations...</p>}
+      {error && <p>{error}</p>}
+      <Recommendations recommendations={recommendations} />
       <About />
       <Footer />
     </div>

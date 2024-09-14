@@ -4,7 +4,7 @@ import './Footer.css';
 function Footer() {
   return (
     <footer>
-      <p>&copy; AI-Powered Emotional Resilience Coach. All rights reserved.</p>
+      <p> AI-Powered Emotional Resilience Coach</p>
     </footer>
   );
 }
