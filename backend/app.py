@@ -3,9 +3,8 @@ from flask_cors import CORS
 import joblib
 
 app = Flask(__name__)
-CORS(app)  # Allow all domains to access the Flask API
+CORS(app)  
 
-# Load your pre-trained model
 model = joblib.load('emotional_resilience_model.pkl')
 
 @app.route('/get_recommendations', methods=['POST'])
@@ -19,10 +18,8 @@ def get_recommendations():
     patterns = data.get('patterns', '')
     open_to_new_strategies = data.get('openToNewStrategies', '')
 
-    # Generate recommendations based on the emotion and intensity
     tips = []
 
-    # Tips based on emotion and intensity
     if emotion == 'sad':
         tips.append("Consider talking to a friend or loved one about your feelings.")
         tips.append("Try engaging in activities that you enjoy to lift your mood.")
@@ -39,15 +36,14 @@ def get_recommendations():
     if intensity >= 7:
         tips.append("Since your emotional intensity is high, consider seeking professional support.")
 
-    # Add media recommendations (meme and song)
     media = [
         {
             "text": "",
-            "image": "https://i.imgflip.com/1pg7k9.jpg"  # Meme link
+            "image": "https://i.imgflip.com/1pg7k9.jpg"  
         },
         {
             
-            "audio": "https://example.com/calm_song.mp3"  # Replace with actual song URL
+            "audio": "https://example.com/calm_song.mp3"  
         }
     ]
     

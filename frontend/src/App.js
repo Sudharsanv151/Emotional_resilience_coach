@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import Header from './components/Header';
-import Home from './components/Home';
-import Survey from './components/Survey';
-import Recommendations from './components/Recommendations';
-import About from './components/About';
-import Footer from './components/Footer';
+import Header from './assets/components/Header';
+import Home from './assets/components/Home';
+import Recommendations from './assets/components/Recommendations';
+import About from './assets/components/About';
+import Footer from './assets/components/Footer';
+import Survey from './assets/components/Survey';
+import VideoBg from './assets/components/Videobg'; // Import the video background
 
 function App() {
   const [recommendations, setRecommendations] = useState({
@@ -42,6 +43,7 @@ function App() {
 
   return (
     <div>
+      <VideoBg/> {/* Add video background here */}
       <Header />
       <Home />
       <Survey onSubmit={handleSurveySubmit} />

@@ -1,0 +1,99 @@
+/* Shared container styling for both survey form and recommendations */
+.shared-container {
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  
+  /* Background blur effect */
+  background: rgba(255, 255, 255, 0.2);  /* Slight white tint */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);  /* For Safari */
+  
+  /* Enhance the glass effect */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(50, 47, 47, 0.18);
+  
+  /* Ensure content is readable */
+  color: #333;  /* Dark text for contrast */
+  
+  /* Remove the opacity: 10 as it's an invalid value */
+  /* opacity: 1;  Full opacity, adjust if needed */
+}
+
+/* Optional: Add styles for text elements inside the container for better readability */
+.shared-container h1, .shared-container h2, .shared-container h3 {
+  color: #1a1a1a;
+}
+
+.shared-container p {
+  color: #333;
+}
+
+.survey-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.survey-form h3 {
+  font-size: 18px;
+  margin: 15px 0;
+  color: #ffffff;
+}
+
+.survey-form select, 
+.survey-form input[type="number"],
+.survey-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.survey-form textarea {
+  height: 100px;
+}
+
+.submit-btn {
+  background-color: #6200ea;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #3700b3;
+}
+
+/* Recommendations styling */
+.recommendations h3 {
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.recommendations ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.recommendations ul li {
+  font-size: 16px;
+  color: #333;
+  padding: 10px 0;
+}
+
+.recommendation-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}

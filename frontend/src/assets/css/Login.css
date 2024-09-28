@@ -1,0 +1,111 @@
+/* General modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000080; /* Black background with transparency */
+  display: flex;
+  color:black;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  text-align: center;
+}
+
+/* Close button styles */
+.close-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Form styles */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+label {
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* Password container styles */
+.password-container {
+  position: relative;
+}
+
+.show-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #0066ff;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* Submit button styles */
+.submit-btn {
+  background-color: #0066ff;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-btn:hover {
+  background-color: #0056d2;
+}
+
+/* Switch mode button styles */
+.switch-mode-btn {
+  background: none;
+  border: none;
+  color: #0066ff;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.switch-mode-btn:hover {
+  text-decoration: underline;
+}
+
+/* Error message styles */
+.error {
+  color: red;
+  font-size: 14px;
+}
